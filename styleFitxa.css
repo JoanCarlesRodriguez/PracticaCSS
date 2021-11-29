@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  HEADER  */
+header{
+    display: grid;
+    grid-template-rows: [row-start] 40px [end-fila] ;   
+    
+    width: 100%;    
+    background-color: whitesmoke;
+    position: sticky;
+    top: 0px;
+    z-index: 7;
+}
+header a, header a:hover, header a:visited, header a:link, header a:active{
+    color: black;
+    text-decoration: none;    
+}
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+ul{
+    display: flex;
+    flex-direction: row;    
+}
+ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 15px;
+}
+#fotoIes{
+    position: absolute;
+    top: 0px;
+    left: 3px;    
+}
+
+.menuHeader{
+    display: flex;
+    flex-direction: row;        
+}
+.menuHeader a{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 10px;
+}
+
+
+
+
+/*      MAIN        */
+main{
+    display: grid;
+    grid-template-rows: 
+    [inici-nom] 50px 
+    [inici-valoracio] 40px 
+    [inici-marca] 100px 
+    [inici-preu] 50px 
+    [inici-atributs] 400px 
+    [inici-carreto] 100px
+    [final];
+    grid-template-columns: 
+    [inici] auto
+    [inici-foto] 500px
+    [inici-fitxa] 60%
+    [final] auto;
+}
+
+/*  Seccio FOTO     */
+#foto{
+    background-color:white;
+    grid-row-start: inici-nom;
+    grid-row-end: final;
+    grid-column-start: inici-foto;
+    grid-column-end: inici-fitxa;
+}
+
+.fotoPrincipal{
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.carruselComplet{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    width: 100%;   
+}
+.carrusel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100px;
+    width: 100%;
+}
+#fotoSelecionada{    
+    border-bottom: 4px solid grey;
+}
+
+
+
+/*          FITXA DRETA         */
+
+#atributs p, #atributs div, #preu h4, #marca p, #nom h3, #valoracio svg{
+    margin-left: 12px; 
+}
+
+/*      NOM     */
+#nom{
+    grid-row-start: inici-nom;
+    grid-row-end: inici-valoracio;
+    grid-column-start: inici-fitxa;
+    grid-column-end: final;
+    display: flex;
+    align-items: center;
+}
+/*      VALORACIO       */
+#valoracio{
+    grid-row-start: inici-valoracio;
+    grid-row-end: inici-marca;
+    grid-column-start: inici-fitxa;
+    grid-column-end: final;
+    display: flex;
+    align-items: center;
+}
+#valoracio p{
+    text-indent: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1em;
+}
+.estrelles{
+    color: rgb(195, 195, 195);   
+}
+
+/*      MARCA I MODEL       */
+#marca{
+    grid-row-start: inici-marca;
+    grid-row-end: inici-preu;
+    grid-column-start: inici-fitxa;
+    grid-column-end: final;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+#marca p{
+    padding-top: 8px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*      PREU    */
+#preu{
+    grid-row-start: inici-preu;
+    grid-row-end: inici-atributs;
+    grid-column-start: inici-fitxa;
+    grid-column-end: final;
+    display: flex;
+    align-items: center;
+}
+
+
+/*   ATRIBUTS    */
+#atributs{    
+    grid-row-start: inici-atributs;
+    grid-row-end: inici-carreto;
+    grid-column-start: inici-fitxa;
+    grid-column-end: final;    
+}
+
+.titols{
+    font-family: 'Raleway', sans-serif;    
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+}
+.descripcio{
+    text-align: justify;
+    text-indent: 50px;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+#talles{
+    display: flex;
+    flex-direction: row;    
+}
+.talla{
+    border: 3px solid black;
+    padding: 7px;
+    margin: 5px;
+    border-radius: 100%;
+    background-color: #f5f5f5;
+}
+#colors{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.color{
+    margin: 10px;   
+}
+.color img{
+    border: 2px solid black;
+    border-radius: 50%;
+}
+.quantitats{
+    border: 1px solid black;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.quantitat{
+    border: 1px solid black;
+    background-color: #f5f5f5;
+    width: 50px;
+    font-size: 25px;
+    text-align: center;
+    padding: 5px;
+}
+#quantitat{
+    width: 100px;
+    background-color: white;
+}
+
+
+/*      CARRETO     */
+#carreto{
+    grid-row-start: inici-carreto;
+    grid-row-end: inici-final;
+    grid-column-start: inici-fitxa;
+    grid-column-end: final;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+.carrito{   
+    width: 80%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 12px;
+}
+
+.carro{
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    background-color: black;       
+    padding: 20px 100px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: white; 
+}
+.cor{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cor svg{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/*      FOOTER      */
+
+footer{
+    background-color: black;       /*MODIFICAR A NEGRE*/
+    display: grid;
+    height: 450px;
+    grid-template-rows: [row-start] 300px [end-fila] ;
+    /*grid-row-start: row-start;
+    grid-row-end: row-fila;*/
+}
+footer *{
+    margin: 5px;
+}
+.contenidorFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+#footerD1{
+    width: 20%;
+}
+.newsletter{
+    color: whitesmoke;
+    font-size: 23px;
+    font-weight: bold;
+}
+.direccio{
+    font-size: 15PX;
+    color: whitesmoke;
+}
+.textFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+    color: whitesmoke;
+}
+.titolsFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 190px;
+    margin-bottom: 20px;
+}
+.titolsFooter p{
+    font-size: 23px;
+}
+.textFooter div{
+    display: flex;
+    flex-direction: column;        
+}
+#footerD3{
+    width: 30%;
+}
+
+.correu{
+    padding: 12px;
+    margin: 5px;
+    background-color: whitesmoke;
+    font-size: 10px;
+}
+.enviar{
+    padding: 14px;
+    margin: 5px;
+    background-color: yellow;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.textFooterOcult{
+    font-size: 15px;
+    line-height: 2.5;
+}
+
+/*      PREGUNTES       
+
+
+*/

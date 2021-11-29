@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  HEADER  */
+header{
+    display: grid;
+    grid-template-rows: [row-start] 40px [end-fila] ;   
+    
+    width: 100%;    
+    background-color: whitesmoke;
+    position: sticky;
+    top: 0px;
+    z-index: 7;
+}
+header a, header a:hover, header a:visited, header a:link, header a:active{
+    color: black;
+    text-decoration: none;    
+}
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+ul{
+    display: flex;
+    flex-direction: row;    
+}
+ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 15px;
+}
+#fotoIes{
+    position: absolute;
+    top: 0px;
+    left: 3px;    
+}
+
+.menuHeader{
+    display: flex;
+    flex-direction: row;        
+}
+.menuHeader a{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 10px;
+}
+
+
+/*  MAIN    */
+main{
+    height: 900px;
+    display: grid;
+    grid-template-rows: 
+    [inici-titol] 150px 
+    [inici-productes] 500px 
+    [inici-total] 150px 
+    [inici-comprar] 100px 
+    [final];
+    grid-template-columns: [inici] auto [final];    
+}
+
+main section{
+    display: flex;
+    align-items: center;
+}
+
+/*  TITOL   */
+#titol{
+    grid-row-start: inici-titol;
+    grid-row-end: inici-productes;
+    grid-column-start: inici;
+    grid-column-end: final;
+
+    display: flex;
+    flex-direction: column;  
+}
+#degradat{
+    text-align: center;
+    color: whitesmoke;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px #000000;
+    border: 1px solid rgb(107, 106, 106);
+    height: 18px;
+    width: 500px;
+    background-image: linear-gradient(45deg,green,rgb(162, 236, 156),green, rgb(162, 236, 156), green, rgb(162, 236, 156), green,rgb(162, 236, 156),green, rgb(162, 236, 156), green, rgb(162, 236, 156), green,rgb(162, 236, 156),green, rgb(162, 236, 156), green, rgb(162, 236, 156),green,rgb(162, 236, 156),green, rgb(162, 236, 156), green, rgb(162, 236, 156) );
+}
+.d1Titol *{
+    margin: 15px;
+}
+.d1Titol h2{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.d1Titol p{
+    color: rgb(95, 95, 95);
+}
+
+/*  PRODUCTES   */
+#productes{
+    grid-row-start: inici-productes;
+    grid-row-end: inici-total;
+    grid-column-start: inici;
+    grid-column-end: final;
+}
+.contenidorPrincipalProductes{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    
+}
+.contenidorProductes{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.d2ProductesText{
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.atributs{
+    display: flex;
+    margin-top: 10px;
+}
+.talla{
+    font-size: 18px;
+}
+.atributs *{
+    margin-right: 20px;
+    color: gray;
+}
+.preu{
+    margin-top: 10px;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.quantitat{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.quantitat input{
+    width: 50px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+
+/*  TOTAL   */
+#total{
+    grid-row-start: inici-total;
+    grid-row-end: inici-comprar;
+    grid-column-start: inici;
+    grid-column-end: final;
+
+}
+.contenidorPrincipalTotal{          /*  AIXO NO SE CENTRA COM TOCA  */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.contenidorTotal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+.d1Total{
+    display: flex;
+    justify-content: space-between;
+}
+.d1Total p{
+    font-size: 19px;
+}
+.preuTotal{
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.d2Total{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+.d2Total p{
+    width: 50%;
+}
+.d2Total p:first-child{
+    font-size: 19px;
+}
+
+
+/*  COMPRAR */
+#comprar{
+    grid-row-start: inici-comprar;
+    grid-row-end: final;
+    grid-column-start: inici;
+    grid-column-end: final;
+}
+.contenidorPrincipalComprar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.condicions{
+    display: flex;
+    justify-content: center;
+}
+.condicions p{
+    margin-left: 20px;
+    font-size: 18px;
+}
+.condicions p span{
+    text-decoration: underline;
+}
+.botoComprar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.boto{
+    width: 500px;
+    height: 40px;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+}
+
+
+
+/*      FOOTER      */
+
+footer{
+    background-color: black;       /*MODIFICAR A NEGRE*/
+    display: grid;
+    height: 450px;
+    grid-template-rows: [row-start] 300px [end-fila] ;
+    /*grid-row-start: row-start;
+    grid-row-end: row-fila;*/
+}
+footer *{
+    margin: 5px;
+}
+.contenidorFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+#footerD1{
+    width: 20%;
+}
+.newsletter{
+    color: whitesmoke;
+    font-size: 23px;
+    font-weight: bold;
+}
+.direccio{
+    font-size: 15PX;
+    color: whitesmoke;
+}
+.textFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+    color: whitesmoke;
+}
+.titolsFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 190px;
+    margin-bottom: 20px;
+}
+.titolsFooter p{
+    font-size: 23px;
+}
+.textFooter div{
+    display: flex;
+    flex-direction: column;        
+}
+#footerD3{
+    width: 30%;
+}
+
+.correu{
+    padding: 12px;
+    margin: 5px;
+    background-color: whitesmoke;
+    font-size: 10px;
+}
+.enviar{
+    padding: 14px;
+    margin: 5px;
+    background-color: yellow;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.textFooterOcult{
+    font-size: 15px;
+    line-height: 2.5;
+}

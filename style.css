@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  HEADER  */
+header{
+    display: grid;
+    grid-template-rows: [row-start] 40px [end-fila] ;   
+    
+    width: 100%;    
+    background-color: whitesmoke;
+    position: sticky;
+    top: 0px;
+    z-index: 7;
+}
+header a, header a:hover, header a:visited, header a:link, header a:active{
+    color: black;
+    text-decoration: none;    
+}
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+ul{
+    display: flex;
+    flex-direction: row;    
+}
+ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 15px;
+}
+
+/*  Desplegable */
+.desplegable {
+    position: relative;
+    display: inline-block;
+  }
+  
+.menuOcult {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.menuOcult a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+#fotoIes{
+    position: absolute;
+    top: 0px;
+    left: 50px;    
+}
+
+/*  Menu PC  OCULT */
+.menuHeader{
+    display: none;
+}
+.menuHeader a{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+}  
+
+
+
+
+/*      MAIN        */
+#principal{
+    width: 100%;
+    height: 2400px;
+    display: grid;
+    grid-template-rows: 
+    [row-start] 0px 
+    [inici-destacat1] 500px
+    [inici-destacat2] 500px 
+    [inici-tenda] 1050px/*Tenia 50% abans*/
+    [inici-opinions] 350px 
+    [final];
+                            /*  FA FALTA AIXO?  */
+    grid-template-columns: [inici] auto [final];
+    
+}
+
+/*      DESTACAT 1      */
+#destacat1{    
+    /*mirar sa propietat object-fit*/
+    background-image: url(Fotos/destacada1.jpg);
+    background-position: bottom ;
+    background-size: cover;
+    object-fit: contain;
+    /*Grid fill*/
+    grid-row-start: inici-destacat1;
+    grid-row-end: inici-destacat2;
+                                /* REVISAR COLUMNES*/
+    grid-column-start: inici;
+    grid-column-end: final;
+
+    /*Flex pare*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*flex-direction: column;
+    justify-content: space-between;*/  
+    
+}
+#destacat1 #d1{
+    /*Flex pare*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+#destacat1 #d1 h1{
+    margin: 7px 30px;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+#destacat1 #d1 p{
+    margin: 7px 70px;
+    color: white;
+    font-size: 15px;
+    text-shadow: 2px 2px 2px #000000;
+    
+
+}
+
+#destacat1 #d1 button{
+    width: 150px;
+    height: 30px;
+    margin: 15px 30px;
+    font-weight: bold;
+    box-shadow: 5px 2px 10px black;
+    border-radius: 8px;
+    background-color:white;
+}
+#destacat1 #d1 button:hover{
+    background-color: rgb(212, 213, 250);
+    cursor:pointer;
+}
+.destacat1ocult{
+    display: none;
+}
+
+/*      DESTACAT 2      */
+#destacat2{
+    background-image: url(Fotos/destacada2.jpg);
+    background-position: right ;
+    background-size: cover;
+    object-fit: contain;
+
+    /*Grid fill*/
+    grid-row-start: inici-destacat2;
+    grid-row-end: inici-tenda;
+
+    /*Flex pare*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+#destacat2 h1{
+    margin: 7px 30px;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+#destacat2 p{
+    margin: 7px 70px;
+    color: white;
+    font-size: small;
+    text-shadow: 2px 2px 2px #000000;
+
+}
+
+#destacat2 button{
+    width: 150px;
+    height: 30px;
+    margin: 15px 30px;
+    font-weight: bold;
+    box-shadow: 5px 2px 10px black;
+    border-radius: 8px;
+    background-color:white;
+}
+#destacat2 button:hover{
+    background-color: rgb(212, 213, 250);
+    cursor:pointer;
+}
+
+/*      TENDA       */
+#tenda{
+    /*Grid fill*/
+    grid-row-start: inici-tenda;
+    grid-row-end: inici-opinions;
+    
+
+    /*Flex pare*/
+    display: flex;
+    flex-direction: column;    
+    align-items: center;  /*Amb aixo li dic que se posin junts en es principi*/
+}
+.titolTenda{
+    margin-top: 7px;
+}
+.productes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;  /*Amb aixo li dic que se posin junts en es principi*/
+}
+.producte{
+    width: 45%;    /*Li dic que m'ocupi la mitat des contingut*/
+    height: 250px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.fotoTenda{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;    
+}
+.fotoTenda button:hover{
+    cursor:pointer;
+}
+.tamanyFotoTenda{
+    height: 170px;
+}
+.textProducte{
+   text-align: left;
+    width: 296px;
+}
+
+.ofertaNou{
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    background-color:mediumturquoise;
+    color: white;
+    font-size: 12px;     
+}
+.ofertaSale{
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    background-color:rgb(199, 54, 49);
+    color: white; 
+    font-size: 12px;        
+}
+
+.producte button{
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    
+    width: 100%;   
+    font-size: 7px;
+    padding: 5px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    
+
+}
+.referencia{
+    font-size: 12px;
+    margin: 7px 5px 0px 0px;
+}
+.model{
+    font-size: 12px;
+    font-weight: 700;
+    margin: 7px 5px 5px 0px;
+}
+.ofertaPreu{
+    color: grey;
+    text-decoration: line-through;
+    opacity: 50%;
+}
+.preu{
+    font-weight: bold;
+    color: rgb(231, 39, 39);
+}
+
+
+/*      OPINIONS        */
+#opinions{
+    grid-row-start: inici-opinions;
+    grid-row-end: final;
+    background-color: rgb(107, 129, 179);
+}
+.opinio{
+    margin: 5px;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;    /*Amb aixo no me funcionen ses fletxes, sense si*/
+}
+
+.dComentariS{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+.dComentari{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*  COMENTARIS OCULT    */
+.dComentariOcult , .dcerclesOcults{
+    display: none;
+}
+
+
+
+.fotoComentari{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;     
+    /*  NO FUNCIONA  te a veure amb align items de .opinio d'adalt*/
+    align-items: center;
+    
+
+}
+.fotoOpinio{
+    filter: grayscale(100%);
+    border-radius: 100%;
+}
+.estrelles{
+    margin-top: 20px;
+    color: rgb(250, 250, 88);    
+}
+.comentari{
+    margin-top: 15px;
+    font-size: 10px;
+    text-align: center;
+    
+}
+
+
+/*      FOOTER       */
+footer{
+    background-color: black;       /*MODIFICAR A NEGRE*/
+    display: grid;
+    height: 450px;
+    grid-template-rows: [row-start] 300px [end-fila] ;
+    /*grid-row-start: row-start;
+    grid-row-end: row-fila;*/
+}
+footer *{
+    margin: 5px;
+}
+.contenidorFooter{
+    display: flex;
+    flex-direction: column;
+}
+.newsletter{
+    color: whitesmoke;
+    font-size: 15px;
+    font-weight: bold;
+}
+.direccio{
+    font-size: 10px;
+    color: whitesmoke;
+}
+.textFooter{
+    color: whitesmoke;
+}
+.titolsFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.correu{
+    padding: 10px;
+    margin: 5px;
+    background-color: whitesmoke;
+    font-size: 10px;
+}
+.enviar{
+    padding: 10px;
+    margin: 5px;
+    background-color: yellow;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.textFooterOcult{
+    display: none;
+    font-size: 10px;
+}
+
+/*      ------------------------------------------- MEDIA ---------------------------------------------------     */
+
+@media only screen and (min-width: 600px) {
+    
+    /*      MAIN        */
+    #principal{
+        width: 100%;
+        height: 2400px;
+        display: grid;
+        grid-template-rows: 
+        [row-start] 0px 
+        [inici-destacat1] 500px
+        [inici-destacat2] 500px 
+        [inici-tenda] 1050px/*Tenia 50% abans*/
+        [inici-opinions] 350px 
+        [final];
+                                /*  FA FALTA AIXO?  */
+        grid-template-columns: [inici] auto [final];
+        
+    }
+
+    /*  HEADER  */
+    .menuHeader{
+        display: flex;
+        flex-direction: row;        
+    }
+    .menuHeader a{
+        margin: 10px;
+    }
+    .desplegable , .menuOcult{
+        display: none;
+    }
+    #fotoIes{
+        left: 3px;
+    }
+
+    /*      DESTACAT 1      */
+    #d2{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    #d1, #d2 {
+        width: 33%;
+    }
+    .destacat1ocult{
+        display: inline; 
+        text-align: center;
+        font-size: 50px;
+        font-family: Arial, Helvetica, sans-serif;        
+        font-weight: bold;
+        letter-spacing: 5px;               
+    }
+    .s1{
+        text-decoration:underline;        
+    }
+
+    /*      TENDA       */
+
+    .producte{
+        width: 24%;    /*Li dic que m'ocupi la mitat des contingut*/
+        height: 480px;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .titolTenda h4{
+        font-size: 25px;
+    }
+    .tamanyFotoTenda{
+        height: 370px;
+    }
+    .ofertaNou{                 
+        font-size: 15px;     
+    }
+    .ofertaSale{       
+        left: 245px;     
+        font-size: 15px;        
+    }
+    .producte button{
+        /*top: 340px;      
+        font-size: 15px;        
+        letter-spacing: 5px; */
+        display: none;     
+    }
+    .referencia{
+        font-size: 15px;
+        margin: 10px 5px 0px 0px;
+    }
+    .model{
+        font-size: 20px;
+    }
+    .ofertaPreu{
+        font-size: 18px;
+        margin-right: 10px;
+    }
+    .preu{
+        font-size: 22px;
+    }
+
+    /*      OPINIONS        */
+    .comentari{
+        font-size: 16px;
+    }
+    .dcerclesOcults{
+        display: inline;
+    }
+    .dComentariOcult{   /*Posar de nou flex esq esteien ocults i pos flex per mantenir s'ordre*/
+        display: flex;
+    }
+    .dcercles{
+        display: none;
+    }
+
+    
+    /*          FOOTER          */
+
+   
+    .lineaFooter{
+        display: none;
+    }
+    .quadratFooter, .titolsFooter svg{
+        display: none;
+    }
+
+    .contenidorFooter{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 50px;
+        
+    }   
+    #footerD1{
+        width: 20%;
+    }
+    .direccio{
+        font-size: 15px;
+    }
+    .textFooter{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 50%;
+    }
+    .titolsFooter{
+        width: 190px;
+        margin-bottom: 20px;
+    }
+    .titolsFooter p{
+        font-size: 23px;
+    }
+    .textFooter div{
+        display: flex;
+        flex-direction: column;        
+    }
+    #footerD3{
+        width: 30%;
+    }
+    .newsletter{
+        font-size: 23px;
+    }
+    .correu{
+        font-size: 12px ;
+    }
+    .enviar{
+        font-size: 14px;
+    }
+    .textFooterOcult{
+        display: inline;
+        font-size: 15px;
+        line-height: 2.5;
+    }
+
+  }
+
+
+
+/*      
+
+- Posar espai extra entre cada nivell, per tal de deixar lloc blanc
+entre una seccio i una altre
+
+*/
