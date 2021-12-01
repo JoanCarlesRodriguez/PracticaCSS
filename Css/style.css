@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&display=swap');*/
+
 
 *{
     margin: 0;
@@ -98,7 +99,7 @@ ul li{
 /*      DESTACAT 1      */
 #destacat1{    
     /*mirar sa propietat object-fit*/
-    background-image: url(Fotos/destacada1.jpg);
+    background-image: url(../dist/fotos/destacada1.jpg);
     background-position: bottom ;
     background-size: cover;
     object-fit: contain;
@@ -157,7 +158,7 @@ ul li{
 
 /*      DESTACAT 2      */
 #destacat2{
-    background-image: url(Fotos/destacada2.jpg);
+    background-image: url(../dist/fotos/destacada2.jpg);
     background-position: right ;
     background-size: cover;
     object-fit: contain;

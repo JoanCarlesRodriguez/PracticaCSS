@@ -21,17 +21,17 @@ var cssmin = require('gulp-cssmin');        // CSS
 //var rename = require('gulp-rename');
 
 function comprimirCss () {
-return gulp.src('./*.css')
+return gulp.src('./Css/*.css')
         .pipe(cssmin())
         //.pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('dist/css'));;
+        .pipe(gulp.dest('./dist/css'));;
 };
 
 
 function comprimirFotos (){                      //Per comprimir ses fotos
 return gulp.src('./Fotos/*')
 		.pipe(imagemin())
-		.pipe(gulp.dest('dist/fotos'))
+		.pipe(gulp.dest('./dist/fotos'))
 };
  
 
